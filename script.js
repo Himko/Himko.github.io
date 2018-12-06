@@ -1,8 +1,17 @@
 (function() {
 	
-
+document.body.onload = function() {
+	setTimeout(function() {
+		let preloader = $('.preloader');
+		//if(!preloader.classList.contains('done')) {
+			//preloader.classList.add('done')
+		//}
+		preloader.toggleClass('done')
+	},1000);
+}
 
 	$('a[href^="#"]').click(function() {
+
 		elementClick = $(this).attr('href');
 		destination  = $(elementClick).offset().top-50;
 		$('html').animate({ scrollTop : destination}, 1000);
@@ -18,6 +27,7 @@
 	}
 	
 	})
+	if($(window).width() < 425) {}
 
     $(window).resize(function() {
         var $width = $(window).width();
